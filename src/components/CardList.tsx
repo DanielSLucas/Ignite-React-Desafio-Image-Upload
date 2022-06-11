@@ -25,8 +25,8 @@ export function CardList({ cards }: CardsProps): JSX.Element {
 
   // TODO FUNCTION HANDLE VIEW IMAGE
   function handleViewImage(url: string): void {
-    setSelectedImageUrl(url);
     onOpen();
+    setSelectedImageUrl(url);
   }
 
   return (

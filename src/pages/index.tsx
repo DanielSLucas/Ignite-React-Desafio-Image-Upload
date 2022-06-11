@@ -20,7 +20,13 @@ export default function Home(): JSX.Element {
     'images',
     // TODO AXIOS REQUEST WITH PARAM
     async ({ pageParam = null }) => {
-      return (await api.get(`/api/images?after=${pageParam}`)).data;
+      return (
+        await api.get('/api/images', {
+          params: {
+            after: pageParam,
+          },
+        })
+      ).data;
     },
     // TODO GET AND RETURN NEXT PAGE PARAM
     {
