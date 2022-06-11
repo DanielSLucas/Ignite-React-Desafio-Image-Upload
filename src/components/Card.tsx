@@ -5,6 +5,7 @@ import {
   Image,
   Skeleton,
   SkeletonText,
+  Flex,
 } from '@chakra-ui/react';
 import { useState } from 'react';
 
@@ -26,17 +27,18 @@ export function Card({ data, viewImage }: CardProps): JSX.Element {
   return (
     <Box key={data.ts} borderRadius="md" bgColor="pGray.800">
       <Skeleton isLoaded={!isLoading}>
-        <Image
-          src={data.url}
-          alt={data.title}
-          objectFit="cover"
-          w="max"
-          h={48}
-          borderTopRadius="md"
-          onClick={() => viewImage(data.url)}
-          onLoad={() => setIsLoading(false)}
-          cursor="pointer"
-        />
+        <Flex align="center" justify="center" borderTopRadius="md">
+          <Image
+            src={data.url}
+            alt={data.title}
+            objectFit="cover"
+            w="max"
+            h={48}
+            onClick={() => viewImage(data.url)}
+            onLoad={() => setIsLoading(false)}
+            cursor="pointer"
+          />
+        </Flex>
       </Skeleton>
 
       <Box pt={5} pb={4} px={6}>
